@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Spark Services - Discord bot & Minecraft server hosting on AMD Epyc nodes with NVMe storage. Pterodactyl panel, 60s setup, real support.">
+    <title>Spark Services | Discord Bot & Minecraft Hosting</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+    <!-- ============ HEADER ============ -->
+    <header class="header" id="header">
+        <nav class="nav container" aria-label="Main navigation">
+            <a href="#home" class="logo" aria-label="Spark Services home">
+                <img src="assets/logo.jpg" alt="Spark Services logo" class="logo-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                <span class="logo-text" style="display:none;">Spark <span class="logo-accent">Services</span></span>
+            </a>
+
+            <ul class="nav-menu" id="nav-menu">
+                <li class="nav-item"><a href="#home" class="nav-link" data-i18n="nav.home">Home</a></li>
+                <li class="nav-item"><a href="#services" class="nav-link" data-i18n="nav.services">Services</a></li>
+                <li class="nav-item"><a href="#pricing" class="nav-link" data-i18n="nav.pricing">Pricing</a></li>
+                <li class="nav-item"><a href="#about" class="nav-link" data-i18n="nav.about">About</a></li>
+                <li class="nav-item"><a href="#owners" class="nav-link" data-i18n="nav.team">Team</a></li>
+                <li class="nav-item"><a href="#contact" class="nav-link" data-i18n="nav.contact">Contact</a></li>
+                <li class="nav-item nav-item-cta">
+                    <a href="https://discord.gg/SM4cTKVAY3" target="_blank" rel="noopener" class="btn btn-primary btn-sm nav-cta" data-i18n="nav.cta">Get Started</a>
+                </li>
+            </ul>
+
+            <div class="nav-actions">
+                <div class="lang-wrap">
+                    <button class="lang-toggle" id="lang-toggle" aria-label="Switch language" aria-expanded="false">
+                        <img src="assets/united.png" alt="English" class="lang-flag" id="lang-flag">
+                        <span id="lang-label">English</span>
+                        <svg class="lang-chevron" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M1 1l4 4 4-4"/></svg>
+                    </button>
+                    <ul class="lang-menu" id="lang-menu">
+                        <li class="lang-option" data-lang="en"><img src="assets/united.png" alt="English" class="lang-flag"> English</li>
+                        <li class="lang-option" data-lang="ar"><img src="assets/saudi.png" alt="العربية" class="lang-flag"> العربية</li>
+                    </ul>
+                </div>
+
+                <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="nav-menu">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- ============ HERO ============ -->
+        <section class="hero" id="home">
+            <div class="hero-bg"></div>
+
+            <div class="container hero-content">
+                <div class="hero-text">
+                    <span class="hero-badge" data-i18n="hero.badge">deploy in &lt; 60 seconds · AMD Epyc / NVMe</span>
+                    <h1 class="hero-title" data-i18n-html="hero.title">
+                        Discord bot &amp; Minecraft hosting, <span class="gradient-text">without the markup</span>
+                    </h1>
+                    <p class="hero-subtitle" data-i18n="hero.subtitle">
+                        Pterodactyl panel, Node 20 / Python 3.11 / Java 21, free migrations.
+                        A bot plan starts at $0.50/mo, a Minecraft server at $2/mo. No hidden fees.
+                    </p>
+                    <div class="hero-cta">
+                        <a href="#pricing" class="btn btn-primary btn-lg" data-i18n="hero.btn1">See pricing</a>
+                        <a href="https://discord.gg/SM4cTKVAY3" target="_blank" rel="noopener" class="btn btn-outline btn-lg" data-i18n="hero.btn2">Ask us on Discord</a>
+                    </div>
+                    <div class="hero-trust">
+                        <div class="trust-item">
+                            <svg class="trust-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                            <span><strong>99.9%</strong> <span data-i18n="hero.trust1">uptime, monitored</span></span>
+                        </div>
+                        <div class="trust-item">
+                            <svg class="trust-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+                            <span><strong>24/7</strong> <span data-i18n="hero.trust2">support, in Discord</span></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="hero-visual reveal">
+                    <div class="hero-card">
+                        <img src="assets/thumbnail.png" alt="Spark Services hosting control panel preview" class="hero-thumb" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="hero-card-fallback" style="display:none;">
+                            <div class="fallback-server">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"/><rect x="2" y="14" width="20" height="8" rx="2" ry="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/><circle cx="12" cy="6" r="1"/><circle cx="12" cy="18" r="1"/></svg>
+                            </div>
+                            <div class="fallback-lines">
+                                <span></span><span></span><span></span>
+                            </div>
+                            <p data-i18n="hero.cardStatus">server online</p>
+                        </div>
+                        <div class="hero-card-badge">
+                            <span class="pulse-dot"></span> <span data-i18n="hero.live">Live</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hero-stats">
+                <div class="container stat-row">
+                    <div class="stat reveal">
+                        <span class="stat-number">99.9%</span>
+                        <span class="stat-label" data-i18n="stats.uptime">uptime</span>
+                    </div>
+                    <div class="stat reveal">
+                        <span class="stat-number">24/7</span>
+                        <span class="stat-label" data-i18n="stats.support">support in Discord</span>
+                    </div>
+                    <div class="stat reveal">
+                        <span class="stat-number" data-stat="servers">20+</span>
+                        <span class="stat-label" data-i18n="stats.deployed">servers running</span>
+                    </div>
+                    <div class="stat reveal">
+                        <span class="stat-number">&lt;60s</span>
+                        <span class="stat-label" data-i18n="stats.setup">time to live</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ ABOUT ============ -->
+        <section class="about section" id="about">
+            <div class="container">
+                <div class="section-head reveal">
+                    <span class="section-tag" data-i18n="about.tag">The Story</span>
+                    <h2 class="section-title" data-i18n-html="about.title">We got tired of paying for <span class="gradient-text">sleeping bots</span></h2>
+                    <p class="section-subtitle" data-i18n="about.subtitle">
+                        Spark started in May 2026 when three friends realized the bots they paid $12/mo for went offline more often than their own laptops.
+                        We built the host we wanted: simple, fast, and run by people who answer messages.
+                    </p>
+                </div>
+
+                <div class="about-grid">
+                    <div class="about-text reveal">
+                        <p data-i18n="about.body">
+                            Everything runs on AMD Epyc nodes with NVMe drives, dedicated per server — not a shared $5 VPS pretending to be "premium".
+                            Our panel is Pterodactyl, the same one the big hosts use, because we'd rather spend time making hosting good than reinventing a control panel.
+                        </p>
+                        <h3 class="about-heading" data-i18n="about.coreValues">What that means for you</h3>
+                        <ul class="about-values">
+                            <li data-i18n-html="about.v1"><strong>Price stays the price</strong> — what you see is what you pay, every month.</li>
+                            <li data-i18n-html="about.v2"><strong>We answer</strong> — support is a real person in our Discord, not a ticket queue.</li>
+                            <li data-i18n-html="about.v3"><strong>You can move</strong> — free migration, and a refund if the first 48 hours aren't right.</li>
+                            <li data-i18n-html="about.v4"><strong>We keep it running</strong> — monitored around the clock, because your community depends on it.</li>
+                        </ul>
+                    </div>
+
+                    <div class="about-cards">
+                        <div class="why-card reveal">
+                            <svg class="why-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"/><rect x="2" y="14" width="20" height="8" rx="2" ry="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/></svg>
+                            <h4 data-i18n="about.card1.title">AMD Epyc + NVMe</h4>
+                            <p data-i18n="about.card1.desc">No overselling. The CPU power we advertise is the CPU power you get.</p>
+                        </div>
+                        <div class="why-card reveal">
+                            <svg class="why-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+                            <h4 data-i18n="about.card2.title">Pterodactyl panel</h4>
+                            <p data-i18n="about.card2.desc">The panel you already know. Files, console, backups — nothing custom to relearn.</p>
+                        </div>
+                        <div class="why-card reveal">
+                            <svg class="why-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+                            <h4 data-i18n="about.card3.title">Free migration</h4>
+                            <p data-i18n="about.card3.desc">We move your worlds, bots, and databases over. You just watch it happen.</p>
+                        </div>
+                        <div class="why-card reveal">
+                            <svg class="why-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+                            <h4 data-i18n="about.card4.title">48-hour refund</h4>
+                            <p data-i18n="about.card4.desc">Not happy in the first two days? Full refund, no questions, no hard feelings.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ SERVICES ============ -->
+        <section class="services section" id="services">
+            <div class="container">
+                <div class="section-head reveal">
+                    <span class="section-tag" data-i18n="services.tag">Services</span>
+                    <h2 class="section-title" data-i18n-html="services.title">Two things, <span class="gradient-text">done properly</span></h2>
+                    <p class="section-subtitle" data-i18n="services.subtitle">
+                        We don't host websites or VPS junk. We host the two things we actually run ourselves,
+                        and we've spent years getting both right.
+                    </p>
+                </div>
+
+                <div class="services-grid">
+                    <article class="service-card reveal">
+                        <div class="service-icon discord-icon">
+                            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.317 4.369a19.79 19.79 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028c.462-.63.874-1.295 1.226-1.994a.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128c.126-.094.252-.192.372-.291a.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.331c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/></svg>
+                        </div>
+                        <h3 data-i18n="services.bot.title">Discord bot hosting</h3>
+                        <p data-i18n="services.bot.desc">Run your bot on Node 20, Python 3.11, or Java 21. Installed from one command in the panel, online in under a minute.</p>
+                        <div class="tech-tags">
+                            <span class="tech-tag">discord.js</span>
+                            <span class="tech-tag">discord.py</span>
+                            <span class="tech-tag">JDA</span>
+                            <span class="tech-tag">Node 20</span>
+                            <span class="tech-tag">Python 3.11</span>
+                            <span class="tech-tag">Java 21</span>
+                        </div>
+                        <ul class="service-features">
+                            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> <span data-i18n="services.bot.f1">Credits billed monthly, not per-minute</span></li>
+                            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> <span data-i18n="services.bot.f2">SQL database included on most plans</span></li>
+                            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> <span data-i18n="services.bot.f3">Grow from 512MB to 4GB without reinstall</span></li>
+                        </ul>
+                        <a href="#pricing" class="btn btn-ghost" data-i18n="services.bot.btn">Bot pricing →</a>
+                    </article>
+
+                    <article class="service-card reveal">
+                        <div class="service-icon minecraft-icon">
+                            <svg viewBox="0 0 24 24"><defs><linearGradient id="mcgrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#c4b5fd"/><stop offset="1" stop-color="#8b5cf6"/></linearGradient></defs><rect x="0" y="0" width="24" height="24" rx="7" fill="url(#mcgrad)"/><rect x="4" y="4" width="4" height="4" rx="1.5" fill="#1e1b4b"/><rect x="16" y="4" width="4" height="4" rx="1.5" fill="#1e1b4b"/><rect x="2" y="8" width="8" height="4" rx="1.5" fill="#1e1b4b"/><rect x="14" y="8" width="8" height="4" rx="1.5" fill="#1e1b4b"/><rect x="4" y="12" width="4" height="4" rx="1.5" fill="#1e1b4b"/><rect x="16" y="12" width="4" height="4" rx="1.5" fill="#1e1b4b"/><rect x="6" y="16" width="12" height="2" rx="1" fill="#1e1b4b"/><rect x="4" y="18" width="6" height="4" rx="1.5" fill="#1e1b4b"/><rect x="14" y="18" width="6" height="4" rx="1.5" fill="#1e1b4b"/><rect x="2" y="22" width="10" height="2" rx="1" fill="#1e1b4b"/><rect x="12" y="22" width="10" height="2" rx="1" fill="#1e1b4b"/></svg>
+                        </div>
+                        <h3 data-i18n="services.mc.title">Minecraft server hosting</h3>
+                        <p data-i18n="services.mc.desc">Paper, Fabric, Forge, or Vanilla with one click. Modpacks install straight from the panel — no manual jar digging.</p>
+                        <div class="tech-tags">
+                            <span class="tech-tag">Paper</span>
+                            <span class="tech-tag">Fabric</span>
+                            <span class="tech-tag">Forge</span>
+                            <span class="tech-tag">Vanilla</span>
+                            <span class="tech-tag">Modpacks</span>
+                            <span class="tech-tag">DDoS protected</span>
+                        </div>
+                        <ul class="service-features">
+                            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> <span data-i18n="services.mc.f1">Plugin + mod manager built in</span></li>
+                            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> <span data-i18n="services.mc.f2">World backups every 24h, kept for a week</span></li>
+                            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> <span data-i18n="services.mc.f3">Move in free — we transfer the world file</span></li>
+                        </ul>
+                        <a href="#pricing" class="btn btn-ghost" data-i18n="services.mc.btn">MC pricing →</a>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ PRICING ============ -->
+        <section class="pricing section" id="pricing">
+            <div class="container">
+                <div class="section-head reveal">
+                    <span class="section-tag" data-i18n="pricing.tag">Pricing</span>
+                    <h2 class="section-title" data-i18n-html="pricing.title">Flat prices, <span class="gradient-text">no games</span></h2>
+                    <p class="section-subtitle" data-i18n="pricing.subtitle">
+                        All prices are per 30 days. Credits refill every cycle. Upgrade or downgrade from the panel — takes effect instantly.
+                    </p>
+
+                    <div class="plan-tabs reveal" role="tablist" aria-label="Choose plan type">
+                        <button class="plan-tab active" role="tab" data-plan-tab="bot" aria-selected="true" data-i18n="pricing.tab1">Discord Bot</button>
+                        <button class="plan-tab" role="tab" data-plan-tab="mc" aria-selected="false" data-i18n="pricing.tab2">Minecraft Server</button>
+                    </div>
+                </div>
+
+                <!-- Discord Bot plans -->
+                <div class="plan-group active" data-plan-group="bot">
+
+                    <div class="pricing-grid">
+                        <article class="price-card reveal">
+                            <div class="price-card-head">
+                                <h3 class="plan-name" data-i18n="pricing.bot1.name">bot · 512MB</h3>
+                                <p class="plan-desc" data-i18n="pricing.bot1.desc">One bot or a test project</p>
+                            </div>
+                            <div class="plan-price">
+                                <span class="currency">$</span>
+                                <span class="amount">0.5</span>
+                                <span class="period" data-i18n="pricing.per30">/ 30 days</span>
+                            </div>
+                            <div class="spec-table">
+                                <div class="spec-row"><span class="spec-key" data-i18n="pricing.k.ram">RAM</span><span class="spec-val" data-i18n="pricing.bot1.f1">512 MB</span></div>
+                                <div class="spec-row"><span class="spec-key" data-i18n="pricing.k.storage">Storage</span><span class="spec-val" data-i18n="pricing.bot1.f2">1 GB NVMe</span></div>
+                                <div class="spec-row"><span class="spec-key" data-i18n="pricing.k.cpu">CPU</span><span class="spec-val" data-i18n="pricing.bot1.f3">50%</span></div>
+                                <div class="spec-row"><span class="spec-key" data-i18n="pricing.k.db">Databases</span><span class="spec-val" data-i18n="pricing.bot1.f4">0</span></div>
+                                <div class="spec-row"><span class="spec-key" data-i18n="pricing.k.backups">Backups</span><span class="spec-val" data-i18n="pricing.bot1.f5">0</span></div>
+                                <div class="spec-row highlight"><span class="spec-key" data-i18n="pricing.k.credits">Credits</span><span class="spec-val" data-i18n="pricing.bot1.credits">20M / 30 days</span></div>
+                            </div>
+                            <a href="https://discord.gg/SM4cTKVAY3" target="_blank" rel="noopener" class="btn btn-secondary btn-block" data-i18n="pricing.select">Order in Discord</a>
+                        </article>
+
+                        <article class="price-card reveal">
+                            <div class="price-card-head">
+                                <h3 class="plan-name" data-i18n="pricing.bot2.name">bot · 1GB</h3>
+                                <p class="plan-desc" data-i18n="pricing.bot2.desc">For a bot that's actually growing</p>
+                            </div>
+                            <div class="plan-price">
+                                <span class="currency">$</span>
+                                <span class="amount">1</span>
+                                <span class="period" data-i18n="pricing.per30">/ 30 days</span>
+                            </div>
+                            <div class="spec-table">
+                                <div class="spec-row"><span class="spec-key" data-i18n="pricing.k.ram">RAM</span><span class="spec-val" data-i18n="pricing.bot2.f1">1 GB</span></div>
+                                <div class="spec-row"><span class="spec-key" data-i18n="pricing.k.storage">Storage</span><span class="spec-val" data-i18n="pricing.bot2.f2">1 GB NVMe</span></div>
+                                <div class="spec-row"><span class="spec-key" data-i18n="pricing.k.cpu">CPU</span><span class="spec-val" data-i18n="pricing.bot2.f3">100%</span></div>
+                                <div class="spec-row"><span class="spec-key" data-i18n="pricing.k.db">Databases</span><span class="spec-val" data-i18n="pricing.bot2.f4">1</span></div>
+                                <div class="spec-row"><span class="spec-key" data-i18n="pricing.k.backups">Backups</span><span class="spec-val" data-i18n="pricing.bot2.f5">1</span></div>
+                                <div class="spec-row highlight"><span class="spec-key" data-i18n="pricing.k.credits">Credits</span><span class="spec-val" data-i18n="pricing.bot2.credits">40M / 30 days</span></div>
+                            </div>
+                            <a href="https://discord.gg/SM4cTKVAY3" target="_blank" rel="noopener" class="btn btn-secondary btn-block" data-i18n="pricing.select">Order in Discord</a>
+                        </article>
+
+                        <article class="price-card popular reveal">
+                            <span class="popular-badge" data-i18n="pricing.mostPopular">Most Popular</span>
+                            <div class="price-card-head">
+                                <h3 class="plan-name" data-i18n="pricing.bot3.name">bot · 2GB</h3>
+                                <p class="plan-desc" data-i18n="pricing.bot3.desc">The one most people land on</p>
+                            </div>
+                            <div class="plan-price">
+                                <span class="currency">$</span>
+                                <span class="amount">2</span>
+                                <span class="period" data-i18n="pricing.per30">/ 30 days</span>
+                            </div>
+                            <div class="spec-table">
+                                <div class="spec-row"><span class="spec-key" data-i18n="pricing.k.ram">RAM</span><span class="spec-val" data-i18n="pricing.bot3.f1">2 GB</span></div>
+                                <div class="spec-row"><span class="spec-key" data-i18n="pricing.k.storage">Storage</span><span class="spec-val" data-i18n="pricing.bot3.f2">3 GB NVMe</span></div>
+                                <div class="spec-row"><span class="spec-key" data-i18n="pricing.k.cpu">CPU</span><span class="spec-val" data-i18n="pricing.bot3.f3">100%</span></div>
+                                <div class="spec-row"><span class="spec-key" data-i18n="pricing.k.db">Databases</span><span class="spec-val" data-i18n="pricing.bot3.f4">2</span></div>
+                                <div class="spec-row"><span class="spec-key" data-i18n="pricing.k.backups">Backups</span><span class="spec-val" data-i18n="pricing.bot3.f5">2</span></div>
+                                <div class="spec-row highlight"><span class="spec-key" data-i18n="pricing.k.credits">Credits</span><span class="spec-val" data-i18n="pricing.bot3.credits">55M / 30 days</span></div>
+                            </div>
+                            <a href="https://discord.gg/SM4cTKVAY3" target="_blank" rel="noopener" class="btn btn-primary btn-block" data-i18n="pricing.select">Order in Discord</a>
+                        </article>
+
+                        <article class="price-card reveal">
+                            <div class="price-card-head">
+                                <h3 class="plan-name" data-i18n="pricing.bot4.name">bot · 3GB</h3>
+                                <p class="plan-desc" data-i18n="pricing.bot4.desc">Music bots and heavy workloads</p>
+                            </div>
+                            <div class="plan-price">
+                                <span class="currency">$</span>
+                                <span class="amount">4</span>
+                                <span class="period" data-i18n="pricing.per30">/ 30 days</span>
+                            </div>
+                            <div class="spec-table">
+                                <div class="spec-row"><span class="spec-key" data-i18n="pricing.k.ram">RAM</span><span class="spec-val" data-i18n="pricing.bot4.f1">3 GB</span></div>
+                                <div class="spec-row"><span class="spec-key" data-i18n="pricing.k.storage">Storage</span><span class="spec-val" data-i18n="pricing.bot4.f2">4 GB NVMe</span></div>
+                                <div class="spec-row"><span class="spec-key" data-i18n="pricing.k.cpu">CPU</span><span class="spec-val" data-i18n="pricing.bot4.f3">150%</span></div>
+                                <div class="spec-row"><span class="spec-key" data-i18n="pricing.k.db">Databases</span><span class="spec-val" data-i18n="pricing.bot4.f4">3</span></div>
+                                <div class="spec-row"><span class="spec-key" data-i18n="pricing.k.backups">Backups</span><span class="spec-val" data-i18n="pricing.bot4.f5">3</span></div>
+                                <div class="spec-row highlight"><span class="spec-key" data-i18n="pricing.k.credits">Credits</span><span class="spec-val" data-i18n="pricing.bot4.credits">70M / 30 days</span></div>
+                            </div>
+                            <a href="https://discord.gg/SM4cTKVAY3" target="_blank" rel="noopener" class="btn btn-secondary btn-block" data-i18n="pricing.select">Order in Discord</a>
+                        </article>
+
+                        <article class="price-card reveal">
+                            <div class="price-card-head">
+                                <h3 class="plan-name" data-i18n="pricing.bot5.name">bot · 4GB</h3>
+                                <p class="plan-desc" data-i18n="pricing.bot5.desc">Big bots, or several bots at once</p>
+                            </div>
+                            <div class="plan-price">
+                                <span class="currency">$</span>
+                                <span class="amount">8</span>
+                                <span class="period" data-i18n="pricing.per30">/ 30 days</span>
+                            </div>
+                            <div class="spec-table">
+                                <div class="spec-row"><span class="spec-key" data-i18n="pricing.k.ram">RAM</span><span class="spec-val" data-i18n="pricing.bot5.f1">4 GB</span></div>
+                                <div class="spec-row"><span class="spec-key" data-i18n="pricing.k.storage">Storage</span><span class="spec-val" data-i18n="pricing.bot5.f2">5 GB NVMe</span></div>
+                                <div class="spec-row"><span class="spec-key" data-i18n="pricing.k.cpu">CPU</span><span class="spec-val" data-i18n="pricing.bot5.f3">150%</span></div>
+                                <div class="spec-row"><span class="spec-key" data-i18n="pricing.k.db">Databases</span><span class="spec-val" data-i18n="pricing.bot5.f4">4</span></div>
+                                <div class="spec-row"><span class="spec-key" data-i18n="pricing.k.backups">Backups</span><span class="spec-val" data-i18n="pricing.bot5.f5">4</span></div>
+                                <div class="spec-row highlight"><span class="spec-key" data-i18n="pricing.k.credits">Credits</span><span class="spec-val" data-i18n="pricing.bot5.credits">85M / 30 days</span></div>
+                            </div>
+                            <a href="https://discord.gg/SM4cTKVAY3" target="_blank" rel="noopener" class="btn btn-secondary btn-block" data-i18n="pricing.select">Order in Discord</a>
+                        </article>
+                    </div>
+                </div>
+
+                <!-- Minecraft plans -->
+                <div class="plan-group" data-plan-group="mc">
+
+                    <div class="pricing-grid">
+                        <article class="price-card reveal">
+                            <div class="price-card-head">
+                                <h3 class="plan-name" data-i18n="pricing.mc1.name">mc · 2GB</h3>
+                                <p class="plan-desc" data-i18n="pricing.mc1.desc">You and your friends, ~8 players</p>
+                            </div>
+                            <div class="plan-price">
+                                <span class="currency">$</span>
+                                <span class="amount">2</span>
+                                <span class="period" data-i18n="pricing.per30">/ 30 days</span>
+                            </div>
+                            <div class="spec-table">
+                                <div class="spec-row"><span class="spec-key" data-i18n="pricing.k.ram">RAM</span><span class="spec-val" data-i18n="pricing.mc1.f1">2 GB</span></div>
+                                <div class="spec-row"><span class="spec-key" data-i18n="pricing.k.storage">Storage</span><span class="spec-val" data-i18n="pricing.mc1.f2">5 GB NVMe</span></div>
+                                <div class="spec-row"><span class="spec-key" data-i18n="pricing.k.cpu">CPU</span><span class="spec-val" data-i18n="pricing.mc1.f3">150%</span></div>
+                                <div class="spec-row"><span class="spec-key" data-i18n="pricing.k.db">Databases</span><span class="spec-val" data-i18n="pricing.mc1.f4">0</span></div>
+                                <div class="spec-row"><span class="spec-key" data-i18n="pricing.k.backups">Backups</span><span class="spec-val" data-i18n="pricing.mc1.f5">0</span></div>
+                            </div>
+                            <a href="https://discord.gg/SM4cTKVAY3" target="_blank" rel="noopener" class="btn btn-secondary btn-block" data-i18n="pricing.select">Order in Discord</a>
+                        </article>
+
+                        <article class="price-card popular reveal">
+                            <span class="popular-badge" data-i18n="pricing.mostPopular">Most Popular</span>
+                            <div class="price-card-head">
+                                <h3 class="plan-name" data-i18n="pricing.mc2.name">mc · 3GB</h3>
+                                <p class="plan-desc" data-i18n="pricing.mc2.desc">A proper community server, ~20 players</p>
+                            </div>
+                            <div class="plan-price">
+                                <span class="currency">$</span>
+                                <span class="amount">4</span>
+                                <span class="period" data-i18n="pricing.per30">/ 30 days</span>
+                            </div>
+                            <div class="spec-table">
+                                <div class="spec-row"><span class="spec-key" data-i18n="pricing.k.ram">RAM</span><span class="spec-val" data-i18n="pricing.mc2.f1">3 GB</span></div>
+                                <div class="spec-row"><span class="spec-key" data-i18n="pricing.k.storage">Storage</span><span class="spec-val" data-i18n="pricing.mc2.f2">7 GB NVMe</span></div>
+                                <div class="spec-row"><span class="spec-key" data-i18n="pricing.k.cpu">CPU</span><span class="spec-val" data-i18n="pricing.mc2.f3">200%</span></div>
+                                <div class="spec-row"><span class="spec-key" data-i18n="pricing.k.db">Databases</span><span class="spec-val" data-i18n="pricing.mc2.f4">1</span></div>
+                                <div class="spec-row"><span class="spec-key" data-i18n="pricing.k.backups">Backups</span><span class="spec-val" data-i18n="pricing.mc2.f5">1</span></div>
+                            </div>
+                            <a href="https://discord.gg/SM4cTKVAY3" target="_blank" rel="noopener" class="btn btn-primary btn-block" data-i18n="pricing.select">Order in Discord</a>
+                        </article>
+
+                        <article class="price-card reveal">
+                            <div class="price-card-head">
+                                <h3 class="plan-name" data-i18n="pricing.mc3.name">mc · 5GB</h3>
+                                <p class="plan-desc" data-i18n="pricing.mc3.desc">Modpacks and big networks</p>
+                            </div>
+                            <div class="plan-price">
+                                <span class="currency">$</span>
+                                <span class="amount">6</span>
+                                <span class="period" data-i18n="pricing.per30">/ 30 days</span>
+                            </div>
+                            <div class="spec-table">
+                                <div class="spec-row"><span class="spec-key" data-i18n="pricing.k.ram">RAM</span><span class="spec-val" data-i18n="pricing.mc3.f1">5 GB</span></div>
+                                <div class="spec-row"><span class="spec-key" data-i18n="pricing.k.storage">Storage</span><span class="spec-val" data-i18n="pricing.mc3.f2">12 GB NVMe</span></div>
+                                <div class="spec-row"><span class="spec-key" data-i18n="pricing.k.cpu">CPU</span><span class="spec-val" data-i18n="pricing.mc3.f3">250%</span></div>
+                                <div class="spec-row"><span class="spec-key" data-i18n="pricing.k.db">Databases</span><span class="spec-val" data-i18n="pricing.mc3.f4">2</span></div>
+                                <div class="spec-row"><span class="spec-key" data-i18n="pricing.k.backups">Backups</span><span class="spec-val" data-i18n="pricing.mc3.f5">2</span></div>
+                            </div>
+                            <a href="https://discord.gg/SM4cTKVAY3" target="_blank" rel="noopener" class="btn btn-secondary btn-block" data-i18n="pricing.select">Order in Discord</a>
+                        </article>
+                    </div>
+                </div>
+
+                <p class="pricing-note reveal" data-i18n-html="pricing.note">Something bigger? <a href="https://discord.gg/SM4cTKVAY3" target="_blank" rel="noopener">Message us</a> — for big servers and networks we put together custom nodes.</p>
+            </div>
+        </section>
+
+        <!-- ============ FEATURES ============ -->
+        <section class="features section" id="features">
+            <div class="container">
+                <div class="section-head reveal">
+                    <span class="section-tag" data-i18n="features.tag">Under the hood</span>
+                    <h2 class="section-title" data-i18n-html="features.title">The boring stuff, <span class="gradient-text">done right</span></h2>
+                    <p class="section-subtitle" data-i18n="features.subtitle">Nothing fancy to look at — just the parts that keep your server up at 3am.</p>
+                </div>
+
+                <div class="features-grid">
+                    <div class="feature-card reveal">
+                        <span class="feature-num">01</span>
+                        <h3 data-i18n="features.c1.title">AMD Epyc nodes</h3>
+                        <p data-i18n="features.c1.desc">Dedicated CPU cores, not shared slices of a cheap VPS. Performance you can feel.</p>
+                    </div>
+
+                    <div class="feature-card reveal">
+                        <span class="feature-num">02</span>
+                        <h3 data-i18n="features.c2.title">NVMe storage</h3>
+                        <p data-i18n="features.c2.desc">Every plan sits on NVMe. Chunk loading and bot startup that don't make you wait.</p>
+                    </div>
+
+                    <div class="feature-card reveal">
+                        <span class="feature-num">03</span>
+                        <h3 data-i18n="features.c3.title">60-second deploy</h3>
+                        <p data-i18n="features.c3.desc">Order, click deploy, done. Your server is online before you finish your coffee.</p>
+                    </div>
+
+                    <div class="feature-card reveal">
+                        <span class="feature-num">04</span>
+                        <h3 data-i18n="features.c4.title">Hourly backups</h3>
+                        <p data-i18n="features.c4.desc">We snapshot your data every hour. One click restores you to any point in the day.</p>
+                    </div>
+
+                    <div class="feature-card reveal">
+                        <span class="feature-num">05</span>
+                        <h3 data-i18n="features.c5.title">DDoS protection</h3>
+                        <p data-i18n="features.c5.desc">Always-on filtering on every server. Attacks don't take you down, they just tick up our log file.</p>
+                    </div>
+
+                    <div class="feature-card reveal">
+                        <span class="feature-num">06</span>
+                        <h3 data-i18n="features.c6.title">Real support</h3>
+                        <p data-i18n="features.c6.desc">A human reads your message. Average first reply is under 30 minutes, and we don't close tickets on a timer.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ LOCATIONS ============ -->
+        <section class="locations section" id="locations">
+            <div class="container">
+                <div class="section-head reveal">
+                    <span class="section-tag" data-i18n="locations.tag">Locations</span>
+                    <h2 class="section-title" data-i18n-html="locations.title">Based in <span class="gradient-text">Germany</span></h2>
+                    <p class="section-subtitle" data-i18n="locations.subtitle">All servers are hosted in our Frankfurt, Germany node — central Europe, DDoS-filtered, 40 Gbps uplink. One location, no compromises.</p>
+                </div>
+
+                <div class="locations-grid">
+                    <div class="location-card location-featured reveal">
+                        <div class="location-top">
+                            <img class="location-flag" src="assets/germany.png" alt="Germany flag" width="22" height="15">
+                            <span class="location-code">DE · FRA</span>
+                        </div>
+                        <h3 data-i18n="locations.l1.name">Frankfurt, Germany</h3>
+                        <p data-i18n="locations.l1.desc">Our single, primary location. Lowest latency across Europe, great peering worldwide.</p>
+                        <span class="location-badge" data-i18n="locations.featured">All plans hosted here</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ OWNERS ============ -->
+        <section class="owners section" id="owners">
+            <div class="container">
+                <div class="section-head reveal">
+                    <span class="section-tag" data-i18n="team.tag">Team</span>
+                    <h2 class="section-title" data-i18n-html="team.title">The team that <span class="gradient-text">runs it</span></h2>
+                    <p class="section-subtitle" data-i18n="team.subtitle">Meet the people behind Spark — they all hang out in our Discord.</p>
+                </div>
+                <div class="owners-grid" id="owners-grid">
+                    <p class="owners-empty" data-i18n="team.loading">Loading team…</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ CONTACT ============ -->
+        <section class="contact section" id="contact">
+            <div class="container">
+                <div class="contact-wrap reveal">
+                    <div class="contact-head">
+                        <span class="section-tag" data-i18n="contact.tag">Contact</span>
+                        <h2 class="section-title" data-i18n-html="contact.title">Talk to our <span class="gradient-text">team</span></h2>
+                        <p class="contact-tagline" data-i18n="contact.tagline">
+                            We don't do phone lines or contact forms. Everything runs through our Discord — that's where the answers and the people are.
+                        </p>
+                    </div>
+
+                    <div class="contact-grid">
+                        <a href="https://discord.gg/SM4cTKVAY3" target="_blank" rel="noopener" class="contact-card discord-card">
+                            <div class="contact-icon">
+                                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.317 4.369a19.79 19.79 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028c.462-.63.874-1.295 1.226-1.994a.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128c.126-.094.252-.192.372-.291a.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.331c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/></svg>
+                            </div>
+                            <h3 data-i18n="contact.discord.title">Discord server</h3>
+                            <p data-i18n="contact.discord.desc">Sales, support, billing, status updates — all in one place. Come say hi.</p>
+                            <span class="contact-link" data-i18n="contact.discord.link">Join the Discord &rarr;</span>
+                        </a>
+                    </div>
+
+                    <div class="social-row">
+                        <p class="social-tagline" data-i18n-html="social.tagline">One server to rule them all. <span class="gradient-text">No tickets.</span></p>
+                        <div class="social-links">
+                            <a href="https://discord.gg/SM4cTKVAY3" target="_blank" rel="noopener" class="social-link" aria-label="Discord">
+                                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.317 4.369a19.79 19.79 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028c.462-.63.874-1.295 1.226-1.994a.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128c.126-.094.252-.192.372-.291a.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.331c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/></svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ============ FOOTER ============ -->
+    <footer class="footer">
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <a href="#home" class="logo footer-logo">
+                    <img src="assets/logo.jpg" alt="Spark Services logo" class="logo-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                    <span class="logo-text" style="display:none;">Spark <span class="logo-accent">Services</span></span>
+                </a>
+                <p class="footer-desc" data-i18n="footer.desc">
+                    Discord bot &amp; Minecraft hosting on AMD Epyc nodes with NVMe storage. Pterodactyl panel, real support, prices that stay put.
+                </p>
+                <div class="footer-social">
+                    <a href="https://discord.gg/SM4cTKVAY3" target="_blank" rel="noopener" class="social-link" aria-label="Discord">
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.317 4.369a19.79 19.79 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028c.462-.63.874-1.295 1.226-1.994a.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128c.126-.094.252-.192.372-.291a.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.331c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/></svg>
+                    </a>
+                </div>
+            </div>
+
+            <div class="footer-col">
+                <h4 data-i18n="footer.quick">Quick Links</h4>
+                <ul>
+                    <li><a href="#home" data-i18n="nav.home">Home</a></li>
+                    <li><a href="#services" data-i18n="nav.services">Services</a></li>
+                    <li><a href="#pricing" data-i18n="nav.pricing">Pricing</a></li>
+                    <li><a href="#about" data-i18n="nav.about">About</a></li>
+                    <li><a href="#owners" data-i18n="nav.team">Team</a></li>
+                    <li><a href="#contact" data-i18n="nav.contact">Contact</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4 data-i18n="footer.resources">Resources</h4>
+                <ul>
+                    <li><a href="https://discord.gg/SM4cTKVAY3" target="_blank" rel="noopener" data-i18n="footer.support">Support</a></li>
+                    <li><a href="#" data-i18n="footer.status">Status Page</a></li>
+                    <li><a href="#" data-i18n="footer.docs">Documentation</a></li>
+                    <li><a href="#" data-i18n="footer.serverStatus">Server Status</a></li>
+                    <li><a href="#" data-i18n="footer.tos">Terms of Service</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col footer-join">
+                <h4 data-i18n="footer.join.title">Join the Discord</h4>
+                <p data-i18n="footer.join.desc">Status updates, new features, giveaways, and actual humans. That's where we live.</p>
+                <a href="https://discord.gg/SM4cTKVAY3" target="_blank" rel="noopener" class="btn btn-primary btn-sm footer-join-btn">
+                    <svg viewBox="0 0 24 24" fill="currentColor" style="width:18px;height:18px;"><path d="M20.317 4.369a19.79 19.79 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028c.462-.63.874-1.295 1.226-1.994a.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128c.126-.094.252-.192.372-.291a.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.331c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/></svg>
+                    <span data-i18n="footer.join.btn">Join Discord</span>
+                </a>
+            </div>
+        </div>
+
+        <div class="container footer-bottom">
+            <p>&copy; <span id="year"></span> Spark Services. <span data-i18n="footer.rights">All rights reserved.</span></p>
+            <ul class="footer-legal">
+                <li><a href="#" data-i18n="footer.legal1">Privacy Policy</a></li>
+                <li><a href="#" data-i18n="footer.legal2">Terms of Service</a></li>
+                <li><a href="#" data-i18n="footer.legal3">Refund Policy</a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <a href="#home" class="back-to-top" id="back-to-top" aria-label="Back to top">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>
+    </a>
+
+    <script src="assets/owners-data.js"></script>
+    <script src="js/owners.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>

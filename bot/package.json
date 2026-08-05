@@ -1,0 +1,14 @@
+{
+    "name": "spark-bot",
+    "version": "1.0.0",
+    "private": true,
+    "description": "Spark Services bot - writes owners list + avatars for the website (no database)",
+    "main": "bot.js",
+    "scripts": {
+        "start": "node bot.js"
+    },
+    "dependencies": {
+        "discord.js": "^14.15.3",
+        "dotenv": "^16.4.5"
+    }
+}
