@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Spark Services admin area - manage your servers through the Pterodactyl API.">
+    <title>Admin Area | Spark Services</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/dash.css">
+</head>
+<body>
+
+    <!-- ============ HEADER ============ -->
+    <header class="header" id="header">
+        <nav class="nav container" aria-label="Dashboard navigation">
+            <a href="index.html" class="logo" aria-label="Spark Services home">
+                <img src="assets/logo.jpg" alt="Spark Services logo" class="logo-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                <span class="logo-text" style="display:none;">Spark <span class="logo-accent">Services</span></span>
+            </a>
+
+            <ul class="nav-menu" id="nav-menu">
+                <li class="nav-item"><a href="index.html" class="nav-link" data-i18n="dash.back">Back to site</a></li>
+            </ul>
+
+            <div class="nav-actions">
+                <div class="lang-wrap">
+                    <button class="lang-toggle" id="lang-toggle" aria-label="Switch language" aria-expanded="false">
+                        <img src="assets/united.png" alt="English" class="lang-flag" id="lang-flag">
+                        <span id="lang-label">English</span>
+                        <svg class="lang-chevron" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M1 1l4 4 4-4"/></svg>
+                    </button>
+                    <ul class="lang-menu" id="lang-menu">
+                        <li class="lang-option" data-lang="en"><img src="assets/united.png" alt="English" class="lang-flag"> English</li>
+                        <li class="lang-option" data-lang="ar"><img src="assets/saudi.png" alt="العربية" class="lang-flag"> العربية</li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="dash-main">
+
+        <!-- ============ SERVER LIST VIEW ============ -->
+        <section class="dash-view" id="view-servers">
+            <div class="container dash-view-inner">
+                <div class="dash-head">
+                    <div>
+                        <span class="section-tag" data-i18n="dash.servers.tag">Your Servers</span>
+                        <h1 class="dash-title" data-i18n-html="dash.servers.title">Pick a <span class="gradient-text">server</span></h1>
+                    </div>
+                    <button class="btn btn-outline btn-sm" id="btn-refresh-servers">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:15px;height:15px;"><polyline points="23 4 23 10 17 10"/><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/></svg>
+                        <span data-i18n="dash.refresh">Refresh</span>
+                    </button>
+                </div>
+
+                <div class="servers-grid" id="servers-grid"></div>
+                <p class="dash-empty hidden" id="servers-empty" data-i18n="dash.servers.empty">No servers found.</p>
+            </div>
+        </section>
+
+        <!-- ============ SERVER DETAIL VIEW ============ -->
+        <section class="dash-view hidden" id="view-server">
+            <div class="container dash-view-inner">
+
+                <button class="btn btn-ghost btn-sm dash-back" id="btn-back">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:15px;height:15px;"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+                    <span data-i18n="dash.backList">All servers</span>
+                </button>
+
+                <div class="server-head">
+                    <div class="server-head-main">
+                        <h1 class="dash-title server-name" id="server-name">Server</h1>
+                        <div class="server-meta mono" id="server-meta"></div>
+                    </div>
+                    <div class="power-actions" id="power-actions">
+                        <button class="power-btn power-start" data-power="start" title="Start">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:15px;height:15px;"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                            <span data-i18n="dash.power.start">Start</span>
+                        </button>
+                        <button class="power-btn power-restart" data-power="restart" title="Restart">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:15px;height:15px;"><polyline points="23 4 23 10 17 10"/><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/></svg>
+                            <span data-i18n="dash.power.restart">Restart</span>
+                        </button>
+                        <button class="power-btn power-stop" data-power="stop" title="Stop">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:15px;height:15px;"><rect x="6" y="6" width="12" height="12" rx="2"/></svg>
+                            <span data-i18n="dash.power.stop">Stop</span>
+                        </button>
+                        <button class="power-btn power-kill" data-power="kill" title="Kill">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:15px;height:15px;"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+                            <span data-i18n="dash.power.kill">Kill</span>
+                        </button>
+                        <button class="power-btn power-suspend" id="btn-suspend">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:15px;height:15px;"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+                            <span id="btn-suspend-label" data-i18n="dash.suspend">Suspend</span>
+                        </button>
+                        <button class="power-btn power-reinstall" id="btn-reinstall">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:15px;height:15px;"><polyline points="23 4 23 10 17 10"/><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/></svg>
+                            <span data-i18n="dash.settings.reinstall">Reinstall</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Live stat bars -->
+                <div class="stat-row" id="stat-row">
+                    <div class="stat-card">
+                        <span class="stat-label mono" data-i18n="dash.info.cpu">CPU</span>
+                        <div class="mini-bar"><div class="mini-bar-fill" id="stat-cpu"></div></div>
+                        <span class="stat-value mono" id="stat-cpu-v">—</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-label mono" data-i18n="dash.info.memory">Memory</span>
+                        <div class="mini-bar"><div class="mini-bar-fill" id="stat-ram"></div></div>
+                        <span class="stat-value mono" id="stat-ram-v">—</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-label mono" data-i18n="dash.info.disk">Disk</span>
+                        <div class="mini-bar"><div class="mini-bar-fill" id="stat-disk"></div></div>
+                        <span class="stat-value mono" id="stat-disk-v">—</span>
+                    </div>
+                </div>
+
+                <div class="dash-tabs" role="tablist" id="dash-tabs">
+                    <button class="dash-tab active" data-tab="console" role="tab" aria-selected="true" data-i18n="dash.tab.console">Console</button>
+                    <button class="dash-tab" data-tab="files" role="tab" aria-selected="false" data-i18n="dash.tab.files">Files</button>
+                    <button class="dash-tab" data-tab="databases" role="tab" aria-selected="false" data-i18n="dash.tab.databases">Databases</button>
+                    <button class="dash-tab" data-tab="backups" role="tab" aria-selected="false" data-i18n="dash.tab.backups">Backups</button>
+                    <button class="dash-tab" data-tab="schedules" role="tab" aria-selected="false" data-i18n="dash.tab.schedules">Schedules</button>
+                    <button class="dash-tab" data-tab="network" role="tab" aria-selected="false" data-i18n="dash.tab.network">Network</button>
+                    <button class="dash-tab" data-tab="users" role="tab" aria-selected="false" data-i18n="dash.tab.users">Subusers</button>
+                    <button class="dash-tab" data-tab="startup" role="tab" aria-selected="false" data-i18n="dash.tab.startup">Startup</button>
+                    <button class="dash-tab" data-tab="settings" role="tab" aria-selected="false" data-i18n="dash.tab.settings">Settings</button>
+                </div>
+
+                <!-- Console -->
+                <div class="tab-pane active" id="tab-console">
+                    <div class="console-shell" id="console-shell" tabindex="0">
+                        <div class="console-output" id="console-output"><p class="dash-empty" style="padding:20px 0;">—</p></div>
+                    </div>
+                    <div class="console-input-row">
+                        <input class="dash-input console-input" id="console-input" type="text" autocomplete="off" placeholder="Type a command…" data-i18n-placeholder="dash.console.placeholder">
+                        <button class="btn btn-primary btn-sm" id="btn-console-send" data-i18n="dash.console.send">Send</button>
+                        <button class="btn btn-ghost btn-sm" id="btn-console-clear" data-i18n="dash.console.clear">Clear</button>
+                    </div>
+                </div>
+
+                <!-- Files -->
+                <div class="tab-pane" id="tab-files">
+                    <div class="pane-toolbar">
+                        <div class="file-crumbs mono" id="file-crumbs"></div>
+                        <div class="pane-toolbar-actions">
+                            <button class="btn btn-ghost btn-sm" id="btn-newfile" data-i18n="dash.files.newFile">New file</button>
+                            <button class="btn btn-ghost btn-sm" id="btn-newfolder" data-i18n="dash.files.newFolder">New folder</button>
+                            <label class="btn btn-ghost btn-sm file-upload-label" for="file-upload-input">
+                                <span data-i18n="dash.files.upload">Upload</span>
+                                <input type="file" id="file-upload-input" multiple style="display:none;">
+                            </label>
+                            <button class="btn btn-primary btn-sm" id="btn-refresh-files" data-i18n="dash.refresh">Refresh</button>
+                        </div>
+                    </div>
+                    <div class="card-list" id="file-list"></div>
+                </div>
+
+                <!-- Databases -->
+                <div class="tab-pane" id="tab-databases">
+                    <div class="pane-toolbar">
+                        <h3 class="pane-title" data-i18n="dash.databases.title">Databases</h3>
+                        <button class="btn btn-ghost btn-sm" id="btn-refresh-databases" data-i18n="dash.refresh">Refresh</button>
+                        <button class="btn btn-primary btn-sm" id="btn-newdatabase" data-i18n="dash.databases.new">New database</button>
+                    </div>
+                    <div class="card-list" id="database-list"></div>
+                </div>
+
+                <!-- Backups -->
+                <div class="tab-pane" id="tab-backups">
+                    <div class="pane-toolbar">
+                        <h3 class="pane-title" data-i18n="dash.backups.title">Backups</h3>
+                        <button class="btn btn-ghost btn-sm" id="btn-refresh-backups" data-i18n="dash.refresh">Refresh</button>
+                        <button class="btn btn-primary btn-sm" id="btn-newbackup" data-i18n="dash.backups.new">New backup</button>
+                    </div>
+                    <div class="card-list" id="backup-list"></div>
+                </div>
+
+                <!-- Schedules -->
+                <div class="tab-pane" id="tab-schedules">
+                    <div class="pane-toolbar">
+                        <h3 class="pane-title" data-i18n="dash.schedules.title">Schedules</h3>
+                        <button class="btn btn-ghost btn-sm" id="btn-refresh-schedules" data-i18n="dash.refresh">Refresh</button>
+                        <button class="btn btn-primary btn-sm" id="btn-newschedule" data-i18n="dash.schedules.new">New schedule</button>
+                    </div>
+                    <div class="card-list" id="schedule-list"></div>
+                </div>
+
+                <!-- Network -->
+                <div class="tab-pane" id="tab-network">
+                    <div class="pane-toolbar">
+                        <h3 class="pane-title" data-i18n="dash.network.title">Network</h3>
+                        <button class="btn btn-ghost btn-sm" id="btn-refresh-network" data-i18n="dash.refresh">Refresh</button>
+                        <button class="btn btn-primary btn-sm" id="btn-assign-allocation" data-i18n="dash.network.assign">Assign allocation</button>
+                    </div>
+                    <div class="card-list" id="allocation-list"></div>
+                </div>
+
+                <!-- Subusers -->
+                <div class="tab-pane" id="tab-users">
+                    <div class="pane-toolbar">
+                        <h3 class="pane-title" data-i18n="dash.users.title">Subusers</h3>
+                        <button class="btn btn-ghost btn-sm" id="btn-refresh-users" data-i18n="dash.refresh">Refresh</button>
+                        <button class="btn btn-primary btn-sm" id="btn-newuser" data-i18n="dash.users.new">New subuser</button>
+                    </div>
+                    <div class="card-list" id="user-list"></div>
+                </div>
+
+                <!-- Startup -->
+                <div class="tab-pane" id="tab-startup">
+                    <div class="pane-toolbar">
+                        <h3 class="pane-title" data-i18n="dash.startup.title">Startup</h3>
+                        <button class="btn btn-primary btn-sm" id="btn-refresh-startup" data-i18n="dash.refresh">Refresh</button>
+                    </div>
+                    <div class="card-list" id="startup-list"></div>
+                </div>
+
+                <!-- Settings -->
+                <div class="tab-pane" id="tab-settings">
+                    <div class="pane-toolbar">
+                        <h3 class="pane-title" data-i18n="dash.settings.title">Settings</h3>
+                    </div>
+                    <div class="settings-grid">
+                        <div class="settings-card">
+                            <h4 data-i18n="dash.settings.rename">Rename server</h4>
+                            <form id="form-rename" autocomplete="off">
+                                <input class="dash-input" type="text" id="input-newname" data-i18n-placeholder="dash.settings.newname" placeholder="New server name">
+                                <button class="btn btn-secondary btn-sm" type="submit" data-i18n="dash.settings.save">Save</button>
+                            </form>
+                        </div>
+                        <div class="settings-card danger">
+                            <h4 data-i18n="dash.settings.danger">Danger zone</h4>
+                            <p class="settings-desc" data-i18n="dash.settings.reinstallDesc">Reinstall this server from its egg. All files are wiped.</p>
+                            <button class="btn btn-outline btn-sm danger-btn" id="btn-reinstall-danger" data-i18n="dash.settings.reinstall">Reinstall server</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <!-- Modal -->
+    <div class="modal-overlay hidden" id="modal-overlay">
+        <div class="modal" id="modal" role="dialog" aria-modal="true">
+            <h3 class="modal-title" id="modal-title"></h3>
+            <p class="modal-text" id="modal-text"></p>
+            <div class="modal-body" id="modal-body"></div>
+            <div class="modal-actions">
+                <button class="btn btn-ghost btn-sm" id="modal-cancel" data-i18n="dash.modal.cancel">Cancel</button>
+                <button class="btn btn-primary btn-sm" id="modal-confirm" data-i18n="dash.modal.confirm">Confirm</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toasts -->
+    <div class="toast-wrap" id="toast-wrap"></div>
+
+    <script src="js/dash.js"></script>
+</body>
+</html>

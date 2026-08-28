@@ -96,6 +96,7 @@
             "nav.about": "About",
             "nav.team": "Team",
             "nav.contact": "Contact",
+            "nav.dash": "Dashboard",
             "nav.cta": "Get Started",
 
             "hero.badge": "deploy in < 60 seconds · AMD Epyc / NVMe",
@@ -287,6 +288,7 @@
             "nav.about": "من نحن",
             "nav.team": "الفريق",
             "nav.contact": "تواصل معنا",
+            "nav.dash": "لوحة التحكم",
             "nav.cta": "ابدأ الآن",
 
             "hero.badge": "تشغيل في أقل من 60 ثانية · AMD Epyc / NVMe",
